@@ -16,41 +16,6 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-
-                @if (Auth::user()->hasRole('user'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
-                        {{ __('My Profile') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard.roomuser')" :active="request()->routeIs('dashboard.roomuser')">
-                        {{ __('Room') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard.facilityuser')" :active="request()->routeIs('dashboard.facilityuser')">
-                        {{ __('Facility') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('booking.index')" :active="request()->routeIs('dashboard.booking')">
-                        {{ __('Booking') }}
-                    </x-nav-link>
-                    
-                </div>
-                @endif
-                @if (Auth::user()->hasRole('admin'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('roomtype.index')" :active="request()->routeIs('dashboard.roomtype')">
-                        {{ __('Room Type') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('facility.index')" :active="request()->routeIs('dashboard.facility')">
-                        {{ __('Facility') }}
-                    </x-nav-link>
-                </div>
-                @endif
-                @if (Auth::user()->hasRole('resepsionis')) 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link :href="route('dashboard.reservation')" :active="request()->routeIs('dashboard.reservation')">
-                        {{ __('Reservation') }}
-                    </x-nav-link>
-                </div>
-                @endif
             </div>
 
             <!-- Settings Dropdown -->
